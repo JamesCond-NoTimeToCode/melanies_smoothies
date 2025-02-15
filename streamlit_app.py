@@ -17,7 +17,6 @@ import streamlit as st
 #st.write("Your favorite fruit is:", option)
 
 from snowflake.snowpark.functions import col
-snowflake.snowpark.context.get_active_session()
 session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
